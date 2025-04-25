@@ -34,10 +34,10 @@
     --fw-700: 700;
     --fw-400: 400;
 
-    --fs-fluid-0: clamp(.75rem, 2vw, 1rem);
-    --fs-fluid-1: clamp(1rem, 4vw, 1.5rem);
-    --fs-fluid-2: clamp(1.5rem, 6vw, 2.5rem);
-    --fs-fluid-3: clamp(2rem, 9vw, 3.5rem);
+    --fs-fluid-0: clamp(.65rem, 2vw, 0.813rem);
+    --fs-fluid-1: clamp(0.75rem, 3vw, 1rem);
+    --fs-fluid-2: clamp(1rem, 4.5vw, 1.5rem);
+    --fs-fluid-3: clamp(2rem, 8vw, 3rem);
 }
 
 
