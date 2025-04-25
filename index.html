@@ -10,7 +10,7 @@
 </head>
 <body>
   <header>
-    <h1 class="title">Bill</h1>
+    <picture class="logo"><img src="/images/logo.svg" alt="brand logo"></picture>
   </header>
   <main>
     <section class="app">
@@ -25,16 +25,16 @@
         <div class="calculator__percent">
           <label for="percent" class="calculator__label template-calculator__label">Select Tip %</label>
           <div class="calculator__btns">
-            <button class="calculator__btn template-calculator__btn">5%</button>
-            <button class="calculator__btn template-calculator__btn">10%</button>
-            <button class="calculator__btn template-calculator__btn">15%</button>
-            <button class="calculator__btn template-calculator__btn">25%</button>
-            <button class="calculator__btn template-calculator__btn">50%</button>
-            <input type="number" class="calculator__btn" id="custom-pct" placeholder="Custom">
+            <button class="five calculator__btn template-calculator__btn">5%</button>
+            <button class="ten calculator__btn template-calculator__btn">10%</button>
+            <button class="fifteen calculator__btn template-calculator__btn">15%</button>
+            <button class="twentyfive calculator__btn template-calculator__btn">25%</button>
+            <button class="fifty calculator__btn template-calculator__btn">50%</button>
+            <input type="number" class="custom" id="custom-pct" placeholder="Custom">
           </div>
         </div>
         <div class="calculator__people">
-          <label for="people" class="calculator__label">Number of People</label>
+          <label for="people" class="calculator__label template-calculator__label">Number of People</label>
           <div class="input-wrapper">
             <img src="images/icon-person.svg" alt="person-icon" class="icon">
             <input type="number" class="calculator__input" id="people">
@@ -49,14 +49,14 @@
               <h3 class="display__heading template-display__heading">Tip Amount</h3>
               <p class="display__text template-display__text">/ person</p>
             </div>
-            <div class="display__number template-display__number"></div>
+            <div class="display__number template-display__number">00.00</div>
           </div> <!--close display__calculated-->
           <div class="display__calculated">
             <div class="display__title">
               <h3 class="display__heading template-display__heading">Total</h3>
               <p class="display__text template-display__text">/ person</p>
             </div>
-            <div class="display__number template-display__number"></div>
+            <div class="display__number template-display__number">00.00</div>
           </div> <!--cose display__calculated-->
         </div> <!--close display__summary-->
         <button class="display__button">Reset</button>
