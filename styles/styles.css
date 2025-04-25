@@ -1,0 +1,82 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+
+/* Variables */
+
+:root {
+    --clr-white: #FFFFFF;
+    --clr-black: #000000;
+
+    /*Grey shades*/
+    --clr-grey600: #3d6666;
+    --clr-grey550: #547878;
+    --clr-grey500: #5e7a7d;
+    --clr-grey400: #7f9d9f;
+    --clr-grey300: #9EBBBD;
+    --clr-grey200: #c5e4e7;
+    --clr-grey50: #f3f9fa;
+
+    /*Green shades*/
+    --clr-green900: #00474b;
+    --clr-green800: #085c61;
+    --clr-green750: #0d686d;
+    --clr-green400: #26c2ae;
+    --clr-green200: #9fe8df;
+
+    /*Orange*/
+    --clr-orange400: #e17052;
+
+    /*Typography*/
+    --fstyle-space-mono: 'Space Mono', monospace, serif;
+
+    --fw-700: 700;
+    --fw-400: 400;
+
+    --fs-fluid-0: clamp(.75rem, 2vw, 1rem);
+    --fs-fluid-1: clamp(1rem, 4vw, 1.5rem);
+    --fs-fluid-2: clamp(1.5rem, 6vw, 2.5rem);
+    --fs-fluid-3: clamp(2rem, 9vw, 3.5rem);
+}
+
+
+
+/* Templates */
+
+.template-calculator__label {
+    color: var(--clr-grey500);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-fluid-1);
+}
+
+.template-calculator__btn {
+    color: var(--clr-white);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-fluid-2);
+}
+
+.template-display__heading {
+    color: var(--clr-white);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-fluid-1);
+}
+
+.template-display__text {
+    color: var(--clr-grey400);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-fluid-0);
+}
+
+.template-display__number {
+    color: var(--clr-green400);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-fluid-3);
+}
+
+
+
+/* Global Styles */
+body {
+    font-family: var(--fstyle-space-mono);
+}
