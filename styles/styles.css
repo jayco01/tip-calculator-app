@@ -197,6 +197,12 @@ button {
     color: var(--clr-green900);
 }
 
+.calculator__btn.active {
+    background-color: var(--clr-green400);
+    color: var(--clr-green900);
+  }
+  
+
 .display {
     box-sizing: border-box;
     background-color: var(--clr-green900);
@@ -235,6 +241,10 @@ button {
     font-weight: var(--fw-700);
     color: var(--clr-green900);
     text-transform: uppercase;
+}
+
+.display__button.active {
+    background-color: var(--clr-green400);
 }
 
 @media (min-width: 600px)  {
