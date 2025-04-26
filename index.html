@@ -35,7 +35,10 @@
           </div>
         </div>
         <div class="calculator__people">
-          <label for="people" class="calculator__label template-calculator__label">Number of People</label>
+          <div class="people-label-wrapper">
+            <label for="people" class="calculator__label template-calculator__label">Number of People</label>
+            <p class="hide" id="error">Can't be zero</p>
+          </div>
           <div class="input-wrapper">
             <img src="images/icon-person.svg" alt="person-icon" class="icon">
             <input type="number" class="calculator__input" id="people">

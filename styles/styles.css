@@ -273,3 +273,25 @@ button {
         flex: 1;
     }
 }
+
+/* error state */
+
+.hide {
+    display: none !important;
+}
+
+.people-label-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#error {
+    color: var(--clr-orange400);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-fluid-1);
+}
+
+/* .input-error {
+    border: 0.2rem solid var(--clr-orange400);
+} */

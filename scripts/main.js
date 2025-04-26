@@ -8,6 +8,7 @@ const fifteen = document.querySelector("fifteen");
 const ten = document.querySelector("ten");
 const five = document.querySelector("five");
 const bill = document.getElementById("bill")
+const error = document.getElementById("error")
 
 const tipButtons = document.querySelectorAll('.calculator__btn');
 
@@ -42,17 +43,24 @@ customTip.addEventListener('keyup', function() {
 // getting the number of people
 numPeople.addEventListener('keyup', function() {
     peopleValue = parseInt(this.value);
+    if (peopleValue == 0) {
+        console.log(peopleValue)
+        error.classList.remove("hide");
+        numPeople.style.border = "0.2rem solid var(--clr-orange400)"
+    }
 
     calculateTipAmount();
     calculateTotal();
 })
 
+
 // calculating the "Tip Amount"
 function calculateTipAmount() {
     let tipTotal = billValue * tipPct;
-    console.log(tipTotal)
     let tipPerPerson = tipTotal/peopleValue
-    if (tipPerPerson) {
+    if (tipPerPerson == Infinity) {
+        tipAmount.innerHTML = '$0.00';
+    } else if(tipPerPerson) {
         tipAmount.innerHTML = '$' + tipPerPerson.toFixed(2);
     } else {
         tipAmount.innerHTML = '$0.00';
@@ -62,7 +70,9 @@ function calculateTipAmount() {
 // calculating total bill per person
 function calculateTotal() {
     let totalPerPerson = (billValue + (billValue * tipPct))/peopleValue;
-    if (totalPerPerson) {
+    if (totalPerPerson == Infinity) {
+        total.innerHTML = '$0.00';
+    } else if (totalPerPerson) {
         total.innerHTML = '$' + totalPerPerson.toFixed(2);
     } else {
         total.innerHTML = '$0.00';
