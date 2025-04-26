@@ -7,6 +7,7 @@
   <title>Tip calculator app</title>
   <link rel="stylesheet" href="/styles/reset.css">
   <link rel="stylesheet" href="/styles/styles.css">
+  <script src="/scripts/main.js" defer></script>
 </head>
 <body>
   <header>
@@ -49,14 +50,14 @@
               <h3 class="display__heading template-display__heading">Tip Amount</h3>
               <p class="display__text template-display__text">/ person</p>
             </div>
-            <div class="display__number template-display__number">00.00</div>
+            <div class="display__number template-display__number" id="tip-amount">$0.00</div>
           </div> <!--close display__calculated-->
           <div class="display__calculated">
             <div class="display__title">
               <h3 class="display__heading template-display__heading">Total</h3>
               <p class="display__text template-display__text">/ person</p>
             </div>
-            <div class="display__number template-display__number">00.00</div>
+            <div class="display__number template-display__number" id="total">$0.00</div>
           </div> <!--cose display__calculated-->
         </div> <!--close display__summary-->
         <button class="display__button">Reset</button>
