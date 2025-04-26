@@ -86,6 +86,10 @@ body {
     min-height: 100vh;
 }
 
+button {
+    cursor: pointer;
+}
+
 .app {
     background-color: var(--clr-white);
     border-top-right-radius: 1rem;
@@ -201,6 +205,10 @@ body {
     gap: 1.5rem;
 }
 
+.display__title {
+    line-height: var(--fs-fluid-2);
+}
+
 .display__calculated {
     display: flex;
     flex-direction: row;
@@ -209,12 +217,31 @@ body {
 }
 
 .display__button {
-    background-color: var(--clr-green400);
+    background-color: var(--clr-green750);
     border: none;
     border-radius: 0.313rem;
     padding: 0.5rem;
-    font-size: var(--fs-fluid-3);
+    font-size: var(--fs-fluid-2);
     font-weight: var(--fw-700);
     color: var(--clr-green900);
     text-transform: uppercase;
+}
+
+@media (min-width: 600px) and (max-width: 1080px) {
+    body {
+        justify-content: center;
+    }
+
+    .app {
+        border-radius: 1rem;
+    }
+
+    .calculator__btns {
+        display: grid;
+        grid-template-areas:
+        "five ten fifteen"
+        "twentyfive fifty custom"
+        ;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
