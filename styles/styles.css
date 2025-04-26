@@ -133,6 +133,11 @@ button {
     font-size: var(--fs-fluid-2);
 }
 
+.calculator__input:focus {
+    border: 0.2rem solid var(--clr-green400);
+    outline: none;
+}
+
 .calculator__btns {
     display: grid;
     grid-template-areas:
@@ -185,6 +190,11 @@ button {
     border: none;
     border-radius: 0.313rem;
     padding: 0.5rem 1rem;
+}
+
+.calculator__btn:hover, .display__button:hover {
+    background-color: var(--clr-green200);
+    color: var(--clr-green900);
 }
 
 .display {
@@ -275,7 +285,6 @@ button {
 }
 
 /* error state */
-
 .hide {
     display: none !important;
 }
@@ -291,7 +300,3 @@ button {
     font-weight: var(--fw-700);
     font-size: var(--fs-fluid-1);
 }
-
-/* .input-error {
-    border: 0.2rem solid var(--clr-orange400);
-} */
