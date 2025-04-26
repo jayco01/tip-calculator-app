@@ -227,13 +227,18 @@ button {
     text-transform: uppercase;
 }
 
-@media (min-width: 600px) and (max-width: 1080px) {
+@media (min-width: 600px)  {
     body {
         justify-content: center;
     }
 
     .app {
         border-radius: 1rem;
+        padding: 3rem 5rem;
+    }
+
+    .calculator__btn {
+        padding: 0.6rem 2rem;
     }
 
     .calculator__btns {
@@ -244,4 +249,28 @@ button {
         ;
         grid-template-columns: 1fr 1fr 1fr;
     }
+
+    .display {
+        padding: 2rem 3rem;
+    }
+}
+
+@media (min-width: 1080px) {
+    .app {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 2.5rem 2.5rem;
+    }
+    
+    .display {
+        flex: 1;
+        gap: 8rem;
+    }
+
+    .calculator{
+        flex: 1;
+    }
+
 }
