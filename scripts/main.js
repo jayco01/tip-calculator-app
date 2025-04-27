@@ -67,7 +67,7 @@ customTip.addEventListener('keyup', function() {
     activateReset();
 })
 
-// suggetion from Audrey (a.k.a @dar-ju)
+// suggetion from Andrey (a.k.a @dar-ju)
 // Only allow 2 digits in custom tip 
 customTip.addEventListener('keydown', function(input) {
     if (alterKeys.includes(input.key)) return;
