@@ -126,6 +126,7 @@ button {
     background-color: var(--clr-grey50);
     padding: .5rem 1rem;
     border-radius: 0.5rem;
+    border: 0.2rem solid transparent;
 
     text-align: right;
     color: var(--clr-green900);
