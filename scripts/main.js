@@ -39,14 +39,23 @@ bill.addEventListener('blur', function() {
 
 
 // getting the value of the button(tip %) clicked
-bill.addEventListener('keydown', function(input) {
-    if (alterKeys.includes(input.key)) return;
+tipButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Only run for buttons, not the custom input
+        if (!this.classList.contains("calculator__btn")) return;
+        
+        tipPct = parseFloat(this.textContent.replace('%','')) / 100;
+        customTip.value = '';
+        
+        tipButtons.forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
 
-    if (!/^[0-9.]$/.test(input.key)) {
-        input.preventDefault();
-        return;
-    }
-})
+        calculateTipAmount();
+        calculateTotal();
+        activateReset();
+    });
+});
+
 
 // setting active state on the clicked tip button
 tipButtons.forEach(btn => {
@@ -108,7 +117,10 @@ numPeople.addEventListener('keydown', function(input) {
     }
 })
 
-// calculating the "Tip Amount"
+/**
+ * Calculates and displays the tip amount per person.
+ * Updates the #tip-amount element in the UI.
+ */
 function calculateTipAmount() {
     let tipTotal = billValue * tipPct;
     let tipPerPerson = tipTotal/peopleValue
@@ -121,7 +133,10 @@ function calculateTipAmount() {
     }
 }
 
-// calculating total bill per person
+/**
+ * Calculates and displays the total bill per person,
+ * including tip if selected. Updates the #total element in the UI.
+ */
 function calculateTotal() {
     if (!tipPct) {
         let totalPerPerson = billValue/peopleValue;
