@@ -107,6 +107,10 @@ resetBtn.addEventListener("click", function() {
     numPeople.value = '';
     customTip.value = '';
 
+    error.classList.add("hide");
+    numPeople.style.border = "";
+
+
     calculateTipAmount();
     calculateTotal();
 
