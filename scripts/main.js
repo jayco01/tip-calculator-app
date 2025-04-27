@@ -21,6 +21,8 @@ let peopleValue;
 bill.addEventListener('keyup', function() {
     billValue = parseFloat(this.value);
 
+    calculateTipAmount();
+    calculateTotal();
     activateReset();
 })
 
