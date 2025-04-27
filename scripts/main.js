@@ -102,7 +102,7 @@ numPeople.addEventListener('keyup', function() {
     activateReset();
 })
 
-// prevent users from entering special characters in the input feild of bill
+// prevent users from entering special characters when entering number of people
 numPeople.addEventListener('keydown', function(input) {
     if (alterKeys.includes(input.key)) return;
 
