@@ -115,7 +115,9 @@ button {
 .icon{
     position: absolute;
     left: 1rem;
-    bottom: 0.7rem;
+    /* bottom: 0.7rem; */
+    top: 45%;
+    pointer-events: none;
 }
 
 .calculator__input {
