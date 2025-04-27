@@ -48,6 +48,8 @@ tipButtons.forEach(btn => {
 customTip.addEventListener('keyup', function() {
     tipPct = parseFloat(this.value) / 100;
 
+    tipButtons.forEach(b => b.classList.remove("active"));
+
     calculateTipAmount();
     calculateTotal();
     activateReset();
