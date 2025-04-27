@@ -29,28 +29,24 @@ bill.addEventListener('keyup', function() {
 })
 
 // prevent users from entering special characters in the input feild of bill
+bill.addEventListener('blur', function() {
+    let value = parseFloat(this.value);
+    if (!isNaN(value)) {
+        // Always display two decimals
+        this.value = value.toFixed(2);
+    }
+});
+
+
+// getting the value of the button(tip %) clicked
 bill.addEventListener('keydown', function(input) {
     if (alterKeys.includes(input.key)) return;
 
-    if (!/^[0-9/./]$/.test(input.key)) {
+    if (!/^\d*(\.\d{0,2})?$/.test(input.key)) {
         input.preventDefault();
         return;
     }
 })
-
-
-
-// getting the value of the button(tip %) clicked
-tipButtons.forEach(btn => {
-  btn.addEventListener('click', function() {
-    tipPct = parseFloat(this.textContent.replace('%', '')) / 100;
-    customTip.value = '';
-
-    calculateTipAmount();
-    calculateTotal();
-    activateReset();
-  });
-});
 
 // setting active state on the clicked tip button
 tipButtons.forEach(btn => {
