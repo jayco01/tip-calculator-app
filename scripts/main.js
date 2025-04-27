@@ -57,6 +57,16 @@ customTip.addEventListener('keyup', function() {
     activateReset();
 })
 
+// suggetion from Audrey (a.k.a @dar-ju)
+// Only allow 2 digits in custom tip 
+customTip.addEventListener('keydown', function(input) {
+    if (["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"].includes(input.key)) return;
+    if (this.value.length >= 2) {
+        input.preventDefault();
+    }
+})
+
+
 // getting the number of people
 numPeople.addEventListener('keyup', function() {
     peopleValue = parseInt(this.value);
