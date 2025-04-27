@@ -175,6 +175,8 @@ resetBtn.addEventListener("click", function() {
     error.classList.add("hide");
     numPeople.style.border = "";
 
+    tipAmount.classList.remove("shrink")
+    total.classList.remove("shrink")
 
     calculateTipAmount();
     calculateTotal();
