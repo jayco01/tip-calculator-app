@@ -105,6 +105,7 @@ resetBtn.addEventListener("click", function() {
 
     bill.value = '';
     numPeople.value = '';
+    customTip.value = '';
 
     calculateTipAmount();
     calculateTotal();
