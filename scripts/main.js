@@ -42,7 +42,7 @@ bill.addEventListener('blur', function() {
 bill.addEventListener('keydown', function(input) {
     if (alterKeys.includes(input.key)) return;
 
-    if (!/^\d*(\.\d{0,2})?$/.test(input.key)) {
+    if (!/^[0-9.]$/.test(input.key)) {
         input.preventDefault();
         return;
     }
