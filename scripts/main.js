@@ -89,13 +89,25 @@ function calculateTipAmount() {
 
 // calculating total bill per person
 function calculateTotal() {
-    let totalPerPerson = (billValue + (billValue * tipPct))/peopleValue;
-    if (totalPerPerson == Infinity) {
-        total.innerHTML = '$0.00';
-    } else if (totalPerPerson) {
-        total.innerHTML = '$' + totalPerPerson.toFixed(2);
+    if (!tipPct) {
+        let totalPerPerson = billValue/peopleValue;
+        if (totalPerPerson == Infinity) {
+            total.innerHTML = '$0.00';
+        } else if (totalPerPerson) {
+            total.innerHTML = '$' + totalPerPerson.toFixed(2);
+        } else {
+            total.innerHTML = '$0.00';
+        }
+
     } else {
-        total.innerHTML = '$0.00';
+        let totalPerPerson = (billValue + (billValue * tipPct))/peopleValue;
+        if (totalPerPerson == Infinity) {
+            total.innerHTML = '$0.00';
+        } else if (totalPerPerson) {
+            total.innerHTML = '$' + totalPerPerson.toFixed(2);
+        } else {
+            total.innerHTML = '$0.00';
+        }
     }
 }
 
