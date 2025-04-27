@@ -60,7 +60,14 @@ customTip.addEventListener('keyup', function() {
 // suggetion from Audrey (a.k.a @dar-ju)
 // Only allow 2 digits in custom tip 
 customTip.addEventListener('keydown', function(input) {
-    if (["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"].includes(input.key)) return;
+    const alterKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"];
+    if (alterKeys.includes(input.key)) return;
+
+    if (!/^[0-9]$/.test(input.key)) {
+        input.preventDefault();
+        return;
+    }
+
     if (this.value.length >= 2) {
         input.preventDefault();
     }
