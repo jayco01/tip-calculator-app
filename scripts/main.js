@@ -59,9 +59,11 @@ customTip.addEventListener('keyup', function() {
 numPeople.addEventListener('keyup', function() {
     peopleValue = parseInt(this.value);
     if (peopleValue == 0) {
-        console.log(peopleValue)
         error.classList.remove("hide");
         numPeople.style.border = "0.2rem solid var(--clr-orange400)";
+    } else {
+        error.classList.add("hide");
+        numPeople.style.border = "none";
     }
 
     calculateTipAmount();
