@@ -47,9 +47,6 @@ tipButtons.forEach(btn => {
         tipPct = parseFloat(this.textContent.replace('%','')) / 100;
         customTip.value = '';
         
-        tipButtons.forEach(b => b.classList.remove("active"));
-        this.classList.add("active");
-
         calculateTipAmount();
         calculateTotal();
         activateReset();
