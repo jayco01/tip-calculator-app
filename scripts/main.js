@@ -12,6 +12,8 @@ const error = document.getElementById("error")
 const resetBtn = document.querySelector(".display__button")
 const tipButtons = document.querySelectorAll('.calculator__btn');
 
+const alterKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"];
+
 let billValue;
 let tipPct;
 let peopleValue;
@@ -25,6 +27,18 @@ bill.addEventListener('keyup', function() {
     calculateTotal();
     activateReset();
 })
+
+// prevent users from entering special characters in the input feild of bill
+bill.addEventListener('keydown', function(input) {
+    if (alterKeys.includes(input.key)) return;
+
+    if (!/^[0-9/./]$/.test(input.key)) {
+        input.preventDefault();
+        return;
+    }
+})
+
+
 
 // getting the value of the button(tip %) clicked
 tipButtons.forEach(btn => {
@@ -60,7 +74,6 @@ customTip.addEventListener('keyup', function() {
 // suggetion from Audrey (a.k.a @dar-ju)
 // Only allow 2 digits in custom tip 
 customTip.addEventListener('keydown', function(input) {
-    const alterKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"];
     if (alterKeys.includes(input.key)) return;
 
     if (!/^[0-9]$/.test(input.key)) {
@@ -72,7 +85,6 @@ customTip.addEventListener('keydown', function(input) {
         input.preventDefault();
     }
 })
-
 
 // getting the number of people
 numPeople.addEventListener('keyup', function() {
@@ -90,6 +102,15 @@ numPeople.addEventListener('keyup', function() {
     activateReset();
 })
 
+// prevent users from entering special characters in the input feild of bill
+numPeople.addEventListener('keydown', function(input) {
+    if (alterKeys.includes(input.key)) return;
+
+    if (!/^[0-9]$/.test(input.key)) {
+        input.preventDefault();
+        return;
+    }
+})
 
 // calculating the "Tip Amount"
 function calculateTipAmount() {
