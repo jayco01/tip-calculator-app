@@ -124,7 +124,8 @@ function calculateTipAmount() {
     if (tipPerPerson == Infinity) {
         tipAmount.innerHTML = '$0.00';
     } else if(tipPerPerson) {
-        tipAmount.innerHTML = '$' + tipPerPerson.toFixed(2);
+        // tipAmount.innerHTML = '$' + tipPerPerson.toFixed(2);
+        updateDisplayNumber(tipAmount, '$' + tipPerPerson.toFixed(2), 5)
     } else {
         tipAmount.innerHTML = '$0.00';
     }
@@ -140,7 +141,8 @@ function calculateTotal() {
         if (totalPerPerson == Infinity) {
             total.innerHTML = '$0.00';
         } else if (totalPerPerson) {
-            total.innerHTML = '$' + totalPerPerson.toFixed(2);
+            // total.innerHTML = '$' + totalPerPerson.toFixed(2);
+            updateDisplayNumber(total, '$' + totalPerPerson.toFixed(2), 6)
         } else {
             total.innerHTML = '$0.00';
         }
@@ -150,11 +152,14 @@ function calculateTotal() {
         if (totalPerPerson == Infinity) {
             total.innerHTML = '$0.00';
         } else if (totalPerPerson) {
-            total.innerHTML = '$' + totalPerPerson.toFixed(2);
+            // total.innerHTML = '$' + totalPerPerson.toFixed(2);
+            updateDisplayNumber(total, '$' + totalPerPerson.toFixed(2), 6)
         } else {
             total.innerHTML = '$0.00';
         }
     }
+
+    
 }
 
 // resetting the calculator
@@ -182,3 +187,11 @@ resetBtn.addEventListener("click", function() {
 function activateReset() {
     resetBtn.classList.add("active");
 }
+
+// shrink the display number when the number is too long
+function updateDisplayNumber(element, value, len) {
+    element.textContent = value;
+    element.classList.toggle('shrink', value.length > len);
+}
+
+

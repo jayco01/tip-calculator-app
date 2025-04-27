@@ -69,7 +69,13 @@
 .template-display__number {
     color: var(--clr-green400);
     font-weight: var(--fw-700);
-    font-size: var(--fs-fluid-3);
+    /* font-size: var(--fs-fluid-3); */
+
+    max-width: 10ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 
@@ -250,6 +256,15 @@ button {
     background-color: var(--clr-green400);
 }
 
+.display__number {
+    font-size: var(--fs-fluid-3);
+
+}
+
+.display__number.shrink {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
 @media (min-width: 600px)  {
     body {
         justify-content: center;
@@ -290,10 +305,12 @@ button {
     .display {
         flex: 1;
         gap: 8rem;
+        min-width: 25.813rem;
     }
 
     .calculator{
         flex: 1;
+        min-width: 25.813rem;
     }
 }
 
